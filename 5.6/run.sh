@@ -8,6 +8,9 @@ LOG="/var/log/mysql/error.log"
 chmod 644 ${CONF_FILE}
 chmod 644 /etc/mysql/conf.d/mysqld_charset.cnf
 
+MYSQL_USER=${SQLDATA_ENV_MYSQL_USER:-}
+MYSQL_PASS=${SQLDATA_ENV_MYSQL_PASS:-"**Random**"}
+
 StartMySQL ()
 {
     /usr/bin/mysqld_safe > /dev/null 2>&1 &

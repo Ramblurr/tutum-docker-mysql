@@ -22,10 +22,6 @@ ADD import_sql.sh /import_sql.sh
 ADD run.sh /run.sh
 RUN chmod 755 /*.sh
 
-# Exposed ENV
-ENV MYSQL_USER admin
-ENV MYSQL_PASS **Random**
-
 # Replication ENV
 ENV REPLICATION_MASTER **False**
 ENV REPLICATION_SLAVE **False**
