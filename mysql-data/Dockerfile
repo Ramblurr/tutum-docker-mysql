@@ -14,4 +14,7 @@ RUN apt-get update && \
 
 VOLUME  ["/etc/mysql", "/var/lib/mysql"]
 
+ADD my.cnf.minimal /etc/mysql/conf.d/my.cnf
+ADD mysqld_charset.cnf /etc/mysql/conf.d/mysqld_charset.cnf
+
 ENTRYPOINT /usr/bin/tail -f /dev/null
