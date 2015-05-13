@@ -14,8 +14,8 @@ RUN rm -rf /var/lib/mysql/*
 RUN rm /etc/mysql/conf.d/mysqld_safe_syslog.cnf
 
 # Add MySQL configuration
-ADD my.cnf.minimal /etc/mysql/my.cnf
-ADD my.cnf.vanilla /etc/mysql/my.cnf.vanilla
+ADD my.cnf.minimal /etc/mysql/conf.d/my.cnf
+ADD my.cnf.vanilla /etc/mysql/conf.d/my.cnf.vanilla
 ADD mysqld_charset.cnf /etc/mysql/conf.d/mysqld_charset.cnf
 
 # Add MySQL scripts

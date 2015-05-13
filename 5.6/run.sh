@@ -1,10 +1,11 @@
 #!/bin/bash
 
 VOLUME_HOME="/var/lib/mysql"
-CONF_FILE="/etc/mysql/conf.d/my.cnf"
+CONF_FILE=${MYSQL_CONF:-"/etc/mysql/conf.d/my.cnf"}
 LOG="/var/log/mysql/error.log"
 
 # Set permission of config file
+chown -R mysql:mysql /var/lib/mysql
 chmod 644 ${CONF_FILE}
 chmod 644 /etc/mysql/conf.d/mysqld_charset.cnf
 
