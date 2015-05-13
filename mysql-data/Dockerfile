@@ -12,7 +12,7 @@ RUN apt-get update && \
     mkdir -p /etc/mysql && \
     apt-get -yq install mysql-client
 
-VOLUME  ["/etc/mysql", "/var/lib/mysql"]
+VOLUME  ["/var/lib/mysql"]
 
 ADD my.cnf.minimal /etc/mysql/my.cnf
 ADD mysqld_charset.cnf /etc/mysql/conf.d/mysqld_charset.cnf
