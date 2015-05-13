@@ -7,7 +7,11 @@ WORKDIR /
 ENV MYSQL_PASS **ChangeMe**
 ENV MYSQL_USER **ChangeMe**
 
-RUN mkdir -p /var/lib/mysql
-VOLUME  ["/var/lib/mysql"]
+RUN apt-get update && \
+    mkdir -p /var/lib/mysql && \
+    mkdir -p /etc/mysql && \
+    apt-get -yq install mysql-client
+
+VOLUME  ["/etc/mysql", "/var/lib/mysql"]
 
 ENTRYPOINT /usr/bin/tail -f /dev/null
